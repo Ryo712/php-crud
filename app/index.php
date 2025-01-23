@@ -1,8 +1,4 @@
 <?php
-// デバッグ用エラー表示
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 // データベース接続
 $db = new PDO('sqlite:database.db');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -23,7 +19,7 @@ if (isset($_GET['delete'])) {
 }
 
 // データの取得
-$items = $db->query('SELECT * FROM items ORDER BY id DESC')->fetchAll(PDO::FETCH_ASSOC);
+$items = $db->query('SELECT * FROM items ORDER BY id ASC')->fetchAll(PDO::FETCH_ASSOC);
 
 // データの追加処理
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])) {
