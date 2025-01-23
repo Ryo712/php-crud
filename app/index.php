@@ -72,34 +72,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])) {
             background-color: #0056b3;
         }
         ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            background: white;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .item-text {
-            flex: 1;
-        }
-        .item-actions a {
-            margin-left: 10px;
-            text-decoration: none;
-            color: #007bff;
-        }
-        .item-actions a:hover {
-            text-decoration: underline;
-        }
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px; /* アイテムリスト全体の幅を制限 */
+    margin: 0; /* センター配置 */
+}
+
+li {
+    background: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-text {
+    flex: 1;
+    margin-right: 10px; /* ボタンとの間隔を設定 */
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px; /* ボタン同士の間隔を設定 */
+}
+
+.item-actions a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
     </style>
 </head>
 <body>
-    <h1>My Application</h1>
+    <h1>PHP CRUD Application</h1>
 
     <!-- データ追加フォーム -->
     <form method="POST">
