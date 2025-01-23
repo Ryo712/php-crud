@@ -1,4 +1,7 @@
 <?php
+// エラーレポートの有効化
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 // データベース接続
 $db = new PDO('sqlite:database.db');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
